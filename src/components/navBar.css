@@ -1,0 +1,18 @@
+.NavBar{
+    position: relative;
+    height:50px;
+    background-color: black;
+    font-family: sans-serif;
+}
+.logo{
+    color: white;
+    position: absolute;
+}
+.list{
+    white-space:nowrap; 
+    margin:10px;    
+    color:white;
+    float: right;
+    text-decoration: none;
+    display: inline;
+}

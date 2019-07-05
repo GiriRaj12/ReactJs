@@ -1,0 +1,6 @@
+.SideBar{
+    width:200px;
+    background-color: black;
+    height: 100%;
+    position: fixed;
+}
