@@ -1,6 +1,24 @@
 .SideBar{
-    width:200px;
-    background-color: black;
+    width:125px;
+    background-color: #F6F2F2;
     height: 100%;
     position: fixed;
+}
+.sideList{
+    text-align: left;
+    margin-top:120px;
+    font-size: 15px;
+    text-decoration: none;
+    list-style-type: none;
+}
+.elements{
+    color: darkgrey;
+    cursor: pointer;
+   margin-top:20px; 
+   margin-bottom: 20px;
+    font-size: 30px;
+    list-style-type: none;
+}
+.elements :hover{
+    color:black
 }
