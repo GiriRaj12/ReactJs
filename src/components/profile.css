@@ -13,22 +13,22 @@
     height: 100%;
     width: 100%;
     color:rgb(197, 130, 100);
-    font-size: 25px;
-    margin-top: 20px;
+    font-size: 35px;
+    margin-top: 15px;
     margin-left:20px;
 }
-#fastLogo:hover{
+#fastLogo:hover,#facebook:hover,#admin:hover{
     color: rgb(230, 165, 165);
 }
 #facebook{
-    font-size: 25px;
+    font-size: 27px;
     position: relative;
     height:40px;
     width:40px;
     float: right;
     color:  rgb(197, 130, 100);
     margin-top:-40px;
-    margin-right: 70px;
+    margin-right: 80px;
 }
 #admin{
     z-index: 2;
@@ -40,4 +40,9 @@
     margin-top:-40px;
     font-size: 25px;
     color:rgb(197, 130, 100);
+}
+.aboutAdmin{
+    height:200px;
+    width:350px;
+    float:right;
 }

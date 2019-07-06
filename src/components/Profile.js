@@ -3,6 +3,9 @@ import './profile.css';
 
 class Profile extends React.Component{
     state ={
+        a:10
+    }
+    adminEvent(event){
         
     }
     render(){
@@ -16,7 +19,8 @@ class Profile extends React.Component{
                     <div id="admin"><i class="fas fa-user-cog"></i></div>
                 </nav>
             </div>
+
         );
-}
+    }
 }
 export default Profile;
