@@ -1,5 +1,5 @@
 import React from 'react';
-import './feeds.css';
+import './CompCSS/feeds.css';
 
 class Feeds extends React.Component{
     render(){

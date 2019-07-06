@@ -1,13 +1,7 @@
 import React from 'react';
-import './profile.css';
+import './CompCSS/profile.css';
 
 class Profile extends React.Component{
-    state ={
-        a:10
-    }
-    adminEvent(event){
-        
-    }
     render(){
         return (
             <div className="Profile">
