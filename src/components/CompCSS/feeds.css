@@ -9,3 +9,17 @@
     text-align: center;
     background-color:rgb(197, 195, 195);  
 }
+.feedContent{
+    position: absolute;
+    margin-left: 100px;
+    border-radius: 10px;
+    width:80%;
+    height:40px;
+    background-color: rgb(243, 243, 243);
+}
+#feedInput{
+    width: 80%;
+}
+#postButton{
+    color: #000;
+}
