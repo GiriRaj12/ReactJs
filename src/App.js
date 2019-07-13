@@ -10,7 +10,7 @@ class App extends React.Component{
     <div className="App">
       <div><SideBar/></div>
       <div><Profile></Profile></div>
-      <div><Feeds/></div>
+      <div><Feeds name = "Giriraj" content = "Feeds"/></div>
     </div>
   );
 }
