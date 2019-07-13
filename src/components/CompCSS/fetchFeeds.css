@@ -1,0 +1,40 @@
+
+.feedsContainer{
+    position: relative;
+    margin-top:20px;
+    margin-left: -15px;
+    border-radius: 10px;
+    width:100%;
+    list-style-type: none;
+    height:50px;
+    background-color: rgb(243, 243, 243);
+    font-size: 15px;
+    font-family:sans-serif;
+}
+.feedsList{
+    list-style-type: none;
+}
+p{
+    margin-top:5px;
+}
+#name{
+    margin-top: 7px;
+    float: left;
+    font-size: 10px;
+}
+#content{
+    margin-top: 5px;
+    margin-left: 20px;
+    float: left;
+    font-size: 15px;
+}
+.profile{
+    margin-top:5px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right:10px;
+    width: 20px;
+    height: 20px;
+    float:left;
+    background-color: aqua;
+}

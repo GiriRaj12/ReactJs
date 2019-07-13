@@ -6,10 +6,10 @@ class SideBar extends React.Component{
         return (
             <div className="SideBar">
                 <ul className="sideList">
-                    <li className="elements"><i class="fas fa-home" onClick={this.props.homeButton}></i></li>
-                    <li className="elements"><i class="fas fa-chart-line" onClick={this.props.feedsButton}></i></li>
-                    <li className="elements"><i class="fas fa-sliders-h"></i></li>
-                    <li className="elements"><i class="fas fa-clipboard-list"></i></li>
+                    <li className="elements"><i className="fas fa-home" onClick={this.props.homeButton}></i></li>
+                    <li className="elements"><i className="fas fa-chart-line" onClick={this.props.feedsButton}></i></li>
+                    <li className="elements"><i className="fas fa-sliders-h"></i></li>
+                    <li className="elements"><i className="fas fa-clipboard-list"></i></li>
                 </ul>
             </div>
         );

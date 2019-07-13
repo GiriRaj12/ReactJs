@@ -14,7 +14,7 @@ class Feeds extends React.Component{
                </div>
                <div className="feedContent">
                    <input id="feedInput" type="text" placeholder={"Hi "+this.props.name}></input>
-                   <button id="postButton" onclick={this.pullFeeds}>Post</button>
+                   <button id="postButton">Post</button>
                     <div className="feeds">  
                         <FetchFeeds/>
                     </div>
