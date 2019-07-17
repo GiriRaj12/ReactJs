@@ -11,8 +11,14 @@
     font-size: 15px;
     font-family:sans-serif;
 }
+.showFeeds{
+    position: relative;
+    height: 800px;
+    overflow-x: hidden;
+}
 .feedsList{
     list-style-type: none;
+    text-align: center;
 }
 p{
     margin-top:5px;
@@ -37,4 +43,17 @@ p{
     height: 20px;
     float:left;
     background-color: aqua;
+}
+.loadFeedsButton{
+    color: #444444;
+    background: #F3F3F3;
+    border: 1px #DADADA solid;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 9pt;
+    outline: none;
+}
+.loadFeedsButton:hover{
+    background: rgb(235, 222, 222);
 }

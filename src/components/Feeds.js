@@ -11,13 +11,16 @@ class Feeds extends React.Component{
             <div className="container">
                 <div className="feedsView">
                 <p id="feedParagrapgh">{this.state.content}</p>
-               </div>
-               <div className="feedContent">
+                </div>
+               <div className="feedContent" display="block">
                    <input id="feedInput" type="text" placeholder={"Hi "+this.props.name}></input>
-                   <button id="postButton">Post</button>
+                   <button id="postButton" onClick="">Post</button>
                     <div className="feeds">  
-                        <FetchFeeds/>
+                        <FetchFeeds ></FetchFeeds>
                     </div>
+               </div>
+               <div className="charts">
+                    <p>Charts</p>
                </div>
             </div>
         );
