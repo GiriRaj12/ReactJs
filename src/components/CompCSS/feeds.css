@@ -3,7 +3,7 @@
     font-size: 25px;
     margin-top:5%;
     margin-left:10%;
-    position:absolute;
+    position: fixed;
     height:89%;
     width:89.5%;
     text-align: center;
