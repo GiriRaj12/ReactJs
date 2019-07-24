@@ -42,12 +42,11 @@ p{
     width: 20px;
     height: 20px;
     float:left;
-    background-color: aqua;
 }
 .loadFeedsButton{
     color: #444444;
     background: #F3F3F3;
-    border: 1px #DADADA solid;
+    border: 1px rgb(218, 218, 218) solid;
     padding: 5px 10px;
     border-radius: 2px;
     font-weight: bold;
@@ -56,4 +55,15 @@ p{
 }
 .loadFeedsButton:hover{
     background: rgb(235, 222, 222);
+}
+#timeStamp{
+    float:right;
+    position:relative;
+    margin-right: 30px;
+    font-size: 10px;
+}
+#rupeeSign{
+    margin-top:-5px;
+    margin-left: 5px;
+    font-size: 9px;
 }

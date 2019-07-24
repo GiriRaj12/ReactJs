@@ -1,56 +1,80 @@
 import React from "react";
-import axios from "axios";
 import "./CompCSS/fetchFeeds.css";
 
-class FetchFeeds extends React.Component{
+class FetchFeeds extends React.Component {
     state = {
-        cursor : 0,
-        feeds:[{
-            "UserId": 101,
-            "id": 101,
-            "title": "This is first",
-            "Body": "And it takes  nsuscipit follow accepted lightly with  nreprehenderit discomfort may be the entire nnostrum of the things that happens is that they are extremely"
-          },
-          {
-            "UserId": 102,
-            "id": 102,
-            "title": "This is custom",
-            "Body": "And it takes nsuscipit follow accepted lightly with nreprehenderit discomfort may be the entire nnostrum of the things that happens is that they are extremely"
-          }
-        ],
-        tempArray:[]
-    }
+        status: [
+            {
+                id: "money1",
+                money: 10,
+                type: "Income",
+                service: "Cash Back",
+                statusTime: new Date().toLocaleString()
+            },
+            {
+                id: "money2",
+                type: "Expenditure",
+                money: 20,
+                service: "Food",
+                statusTime: new Date().toLocaleString()
 
-    loadFeeds = ()=>{
-        console.log("Into loadFeeds");
-        axios.get(`https://jsonplaceholder.typicode.com/posts`)
-        .then(response =>
-            response.data.map((data)=>{
-                this.setState({feeds:[...this.state.feeds,data]})
-                return null;
-            }));
+            },
+            {
+                id: "money",
+                money: 10000,
+                type: "Income",
+                service: "Salary",
+                statusTime: new Date().toLocaleString()
+            },
+            {
+                id: "money3",
+                type: "Expenditure",
+                money: 200,
+                service: "Party",
+                statusTime: new Date().toLocaleString()
+
+            }
+        ]
     }
-    showFeeds = ()=>{
-        for(let i=0;i<20;i++){
-            console.log(i);
+    componentDidMount() {
+        this.props.onRef(this)
+      }
+    componentWillUnmount() {
+        this.props.onRef(undefined)
+    }
+    addStatus(){
+        var something = {
+            id:"money5",
+            type:this.props.choise,
+            money:this.props.cost,
+            service:this.props.service,
+            statusTime: new Date().toLocaleDateString()
+        }
+        this.setState(status=>({
+            status:[...status,something]
+        }))
+    }
+    
+    getColor = (str) => {
+        if (str === "Expenditure")
+            return "#D74046";
+        else {
+            return "dodgerblue";
         }
     }
-    post = ()=>{
-        console.log("came in post");
-    }
-    render(){
-        return(
+
+    render() {
+        return (
             <div className="showFeeds">
-                {this.loadFeeds}
                 <ul className="feedsList">
-                    {this.state.feeds.map((data)=>
-                    <li><div className="feedsContainer"><div className="profile"></div>
-                    <p id="name">{data.id}</p><br/>
-                    <p id="content">{data.title}</p>
-                    </div></li>
+                    {this.state.status.map((status) =>
+                        <li><div className="feedsContainer"><div className="profile" style={{ backgroundColor: this.getColor(status.type) }}></div>
+                            <p id="name">{status.type + " : " + status.money}<i class="fas fa-rupee-sign" id="rupeeSign"></i></p><br />
+                            <p id="content">{status.service}</p>
+                            <p id="timeStamp">{"Happened in : " + status.statusTime}</p>
+                        </div></li>
                     )}
                 </ul>
-                <button onClick={this.loadFeeds} className="loadFeedsButton">Load More</button> 
             </div>
         );
     }

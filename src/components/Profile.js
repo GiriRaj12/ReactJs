@@ -7,7 +7,7 @@ class Profile extends React.Component{
             <div className="Profile">
                 <nav>
                     <div className="logo">
-                        <div id="fastLogo"><i className="fa fa-shipping-fast"></i></div>
+                        <div id="fastLogo"><i class="fas fa-wallet"></i></div>
                     </div>
                     <div id="facebook"><i className="fab fa-facebook"></i></div>
                     <div id="admin"><i className="fas fa-user-cog"></i></div>
