@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Charts from './components/Charts';
 import Feeds from './components/Feeds';
 import Profile from './components/Profile';
 import SideBar from './components/Sidebar';
@@ -8,29 +7,32 @@ import SideBar from './components/Sidebar';
 class App extends React.Component{
   
   state= {
-    feeds : "block",
-    charts : "none"
+    buttonClicked:"feeds"
   }
 
   homeButton = () => {
-    console.log("home button");
-    this.setState({feeds : "block"});
-    this.setState({charts:"none"});
+    this.setState({buttonClicked:"feeds"},()=>{
+      this.child.changeAccordingly();
+    });
   }
 
   chartsButton = () => {
-    console.log("charts");
-   this.setState({charts : "block"});
-   this.setState({feeds: "none"});
+    this.setState({buttonClicked:"charts"},()=>{
+      this.child.changeAccordingly();
+    });
+  }
+  settingsButton = ()=>{
+    this.setState({buttonClicked:"settings"},()=>{
+      this.child.changeAccordingly();
+    });
   }
 
  render(){
   return (
     <div className="App">
-      <div><SideBar homeButton = {this.homeButton} chartsButton = {this.chartsButton}/></div>
+      <div><SideBar homeButton = {this.homeButton} chartsButton = {this.chartsButton} settings = {this.settingsButton}/></div>
       <div><Profile/></div>
-      <div className="feedsDiv" style={{display:this.state.feeds}}><Feeds name = "Giriraj" content = "Feeds"/></div>
-      <div className="chartsDiv" style={{display:this.state.charts}}><Charts></Charts></div>
+      <div className="feedsDiv"><Feeds onRef={ref=>(this.child = ref)} buttonClicked={this.state.buttonClicked}/></div>
     </div>
   );
 }

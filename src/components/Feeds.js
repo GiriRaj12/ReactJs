@@ -1,18 +1,48 @@
 import React from 'react';
 import FetchFeeds from "./FetchFeeds";
+import Charts from "./Charts";
 import './CompCSS/feeds.css';
 
 class Feeds extends React.Component {
-    constructor(props){
-        super(props);
-        this.state={value:""}
-        this.setCost = this.setCost.bind(this);
-    }
     state = {
         toggleNumber: "",
         choise: "",
-        service:"",
-        cost:""
+        service: "",
+        cost: "",
+        feeds: "block",
+        charts: ""
+    }
+
+    componentDidMount() {
+        this.props.onRef(this)
+    }
+    componentWillUnmount() {
+        this.props.onRef(undefined)
+    }
+    componentWillReceiveProps(){
+        var display = this.props.buttonClicked;
+        if (display === "feeds") {
+            this.setState({ feeds: "block" });
+            this.setState({ charts: "none" });
+        }
+        if (display === "charts") {
+            this.setState({ feeds: "none" });
+            this.setState({ charts: "block" });
+        }
+    }
+
+    changeAccordingly() {
+        console.log("came in ");
+        var display = this.props.buttonClicked;
+        console.log(this.props.buttonClicked);
+        if (display === "feeds") {
+            this.setState({ feeds: "block" });
+            this.setState({ charts: "none" });
+        }
+        if (display === "charts") {
+            this.setState({ feeds: "none" });
+            this.setState({ charts: "block" });
+        }
     }
 
 
@@ -32,54 +62,59 @@ class Feeds extends React.Component {
         console.log(this.state.choise)
     }
 
-    addStatus = (event)=>{
-        this.child.addStatus();
+    addStatus = (event) => {
+        this.setState({ cost: document.getElementById("cost").value });
+        this.setState({ service: document.getElementById("service").value }, () => {
+            this.child.addStatus();
+            this.clear();
+        });
     }
-    setCost = (event)=>{
-        console.log(event.target.value);
-        this.setState({cost:event.target.value});
-    }
-    setService = (event)=>{
-        this.setState({service:event.target.value});
+
+    clear() {
+        document.getElementById("cost").value = "";
+        document.getElementById("service").value = "";
     }
 
 
     render() {
         return (
             <div className="mainContainer">
-                <div className="feedsDiv">
+                <div className="feedsDiv" style={{ display: this.state.feeds }}>
                     <div className="feedContent">
-                            <div className="statusHolder">
+                        <div className="statusHolder">
                             <div className="container" onClick={this.toggle}>
-                                <div class="inner-container">
-                                    <div class="toggle">
+                                <div className="inner-container">
+                                    <div className="toggle">
                                         <p>Expense</p>
                                     </div>
-                                    <div class="toggle">
+                                    <div className="toggle">
                                         <p>Income</p>
                                     </div>
                                 </div>
-                                <div class="inner-container" id='toggle-container'>
-                                    <div class="toggle">
+                                <div className="inner-container" id='toggle-container'>
+                                    <div className="toggle">
                                         <p>Expense</p>
                                     </div>
-                                    <div class="toggle">
+                                    <div className="toggle">
                                         <p>Income</p>
                                     </div>
                                 </div>
                             </div>
-                            <input id="cost" value={this.state.value} type="number" placeholder="Cost" min="0" onChange={this.setCost}></input>
-                            <input id="service" name="service" type="text" placeholder="Reason for income or Expenses" onChange={this.setService}></input>
+                            <input id="cost" value={this.state.value} type="number" placeholder="Cost" min="0"></input>
+                            <input id="service" name="service" type="text" placeholder="Reason for income or Expenses"></input>
                             <button className="postButton add-btn" onClick={this.addStatus}>
-                            <div class="add-icon"></div>
-                            <div class="btn-txt">Post</div>
+                                <div className="add-icon"></div>
+                                <div className="btn-txt">Post</div>
                             </button>
-                            <hr class="line" />
-                            </div> 
+                            <hr className="line" />
+                        </div>
                         <div className="feeds">
-                            <FetchFeeds onRef={ref=>(this.child = ref)} cost={this.state.cost} service={this.state.service} choise={this.state.choise} ></FetchFeeds>
-                        </div> 
+                            <FetchFeeds onRef={ref => (this.child = ref)} cost={this.state.cost} service={this.state.service} choise={this.state.choise} ></FetchFeeds>
+                        </div>
                     </div>
+                </div>
+                <div className="charstDiv" style={{ display: this.state.charts }}>
+                    <Charts></Charts>
                 </div>
             </div>
         );

@@ -128,11 +128,13 @@ a:hover {
     color: #000;
 }
 #cost{
+    margin-top:3px;
     position: relative;
     width: 70px;
     float:left;
 }
 #service{
+    margin-top:3px;
     position: relative;
     width:55%;
     float: left;
