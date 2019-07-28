@@ -2,23 +2,28 @@ import React from 'react';
 import FetchFeeds from "./FetchFeeds";
 import Charts from "./Charts";
 import './CompCSS/feeds.css';
+import axios from 'axios';
 
 class Feeds extends React.Component {
     state = {
         toggleNumber: "",
-        choise: "",
+        choise: "Income",
         service: "",
         cost: "",
         feeds: "block",
-        charts: ""
+        charts: "none",
+        income:"",
+        expense:""
     }
 
     componentDidMount() {
         this.props.onRef(this)
     }
+
     componentWillUnmount() {
         this.props.onRef(undefined)
     }
+
     componentWillReceiveProps(){
         var display = this.props.buttonClicked;
         if (display === "feeds") {
@@ -65,8 +70,17 @@ class Feeds extends React.Component {
     addStatus = (event) => {
         this.setState({ cost: document.getElementById("cost").value });
         this.setState({ service: document.getElementById("service").value }, () => {
-            this.child.addStatus();
-            this.clear();
+            axios.post("http://localhost:8080/status/save",{
+                "id":this.props.id,
+                "cost":this.state.cost,
+                "service":this.state.service,
+                "serviceType":this.state.choise
+            })
+            .then(res=>{
+                console.log(res.data);
+                this.child.addStatus();
+                this.clear();  
+            })
         });
     }
 
@@ -109,7 +123,7 @@ class Feeds extends React.Component {
                             <hr className="line" />
                         </div>
                         <div className="feeds">
-                            <FetchFeeds onRef={ref => (this.child = ref)} cost={this.state.cost} service={this.state.service} choise={this.state.choise} ></FetchFeeds>
+                            <FetchFeeds onRef={ref => (this.child = ref)}></FetchFeeds>
                         </div>
                     </div>
                 </div>

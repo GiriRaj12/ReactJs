@@ -7,7 +7,9 @@ import SideBar from './components/Sidebar';
 class App extends React.Component{
   
   state= {
-    buttonClicked:"feeds"
+    buttonClicked:"feeds",
+    username:"girirajsekar50@gmail.com",
+    id:"giri9133"
   }
 
   homeButton = () => {
@@ -32,7 +34,7 @@ class App extends React.Component{
     <div className="App">
       <div><SideBar homeButton = {this.homeButton} chartsButton = {this.chartsButton} settings = {this.settingsButton}/></div>
       <div><Profile/></div>
-      <div className="feedsDiv"><Feeds onRef={ref=>(this.child = ref)} buttonClicked={this.state.buttonClicked}/></div>
+      <div className="feedsDiv"><Feeds onRef={ref=>(this.child = ref)} buttonClicked={this.state.buttonClicked} id={this.state.id}/></div>
     </div>
   );
 }

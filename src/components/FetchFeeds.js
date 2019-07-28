@@ -44,16 +44,7 @@ class FetchFeeds extends React.Component {
     }
 
     addStatus(){
-        console.log("came in")
-        var something = {
-            id:"money5",
-            type:this.props.choise,
-            money:this.props.cost,
-            service:this.props.service,
-            statusTime: new Date().toLocaleDateString()
-        }
-        console.log(something)
-        this.setState({status:this.state.status.concat(something)});
+        console.log("Came into addStatus");
     }
     
     getColor = (str) => {
