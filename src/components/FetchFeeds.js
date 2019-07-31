@@ -1,5 +1,6 @@
 import React from "react";
 import "./CompCSS/fetchFeeds.css";
+import axios from "axios";
 
 class FetchFeeds extends React.Component {
     state = {
@@ -13,23 +14,23 @@ class FetchFeeds extends React.Component {
             },
             {
                 id: "money2",
-                type: "Expenditure",
-                money: 20,
+                serviceType: "Expenditure",
+                cost: 20,
                 service: "Food",
                 statusTime: new Date().toLocaleDateString()
 
             },
             {
                 id: "money",
-                money: 10000,
-                type: "Income",
+                cost: 10000,
+                serviceType: "Income",
                 service: "Salary",
                 statusTime: new Date().toLocaleDateString()
             },
             {
                 id: "money3",
-                type: "Expenditure",
-                money: 200,
+                serviceType: "Expenditure",
+                cost: 200,
                 service: "Party",
                 statusTime: new Date().toLocaleDateString()
 
@@ -44,8 +45,12 @@ class FetchFeeds extends React.Component {
     }
 
     addStatus(){
-        console.log("Came into addStatus");
-    }
+        axios.get("http://localhost:8080/status/getAll")
+        .then(response=>{
+            console.log(response.data);
+            this.setState({status:this.state.status.concat(response.data)});
+        })
+        }
     
     getColor = (str) => {
         if (str === "Expenditure")
@@ -60,8 +65,8 @@ class FetchFeeds extends React.Component {
             <div className="showFeeds">
                 <ul className="feedsList">
                     {this.state.status.map((status) =>
-                        <li><div className="feedsContainer"><div className="profile" style={{ backgroundColor: this.getColor(status.type) }}></div>
-                            <p id="name">{status.type + " : " + status.money}<i className="fas fa-rupee-sign" id="rupeeSign"></i></p><br />
+                        <li><div className="feedsContainer"><div className="profile" style={{ backgroundColor: this.getColor(status.serviceType) }}></div>
+                            <p id="name">{status.serviceType + " : " + status.cost}<i className="fas fa-rupee-sign" id="rupeeSign"></i></p><br />
                             <p id="content">{status.service}</p>
                             <p id="timeStamp">{"Happened in : " + status.statusTime}</p>
                         </div></li>
