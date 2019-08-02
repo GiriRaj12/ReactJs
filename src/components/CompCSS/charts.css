@@ -51,5 +51,14 @@
 .expense{
     margin-left: 15px;
 }
+.extraDetails{
+  height: 200px;
+  width:400px;
+  background-color: white;
+  float:right;
+  margin-top:20px;
+  border-radius: 10px;
+
+}
 
 

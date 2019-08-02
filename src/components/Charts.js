@@ -1,6 +1,6 @@
 import React from "react"
 import "./CompCSS/charts.css"
-import Loan from "./Loan"
+import PersonalDetails from "./PersonalDetails"
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
 
 class Charts extends React.Component {
@@ -47,7 +47,10 @@ class Charts extends React.Component {
                 </Chart>
             </div>
             <div className="subContainer">
-                <Loan></Loan>
+                <PersonalDetails></PersonalDetails>
+            </div>
+            <div className="extraDetails">
+                
             </div>
             </div>
         );
