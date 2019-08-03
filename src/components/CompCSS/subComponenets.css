@@ -4,4 +4,14 @@
     height: 100%;
     background-color: aliceblue;
     border-radius: 10px;
+    text-align: center;
+}
+.bagroundTextLoan{
+    opacity:0.5 ;
+    color:rgb(190, 117, 117);
+    font-size: 15px;
+    margin-top: 150px;
+    margin-left: 80px;
+    position: absolute;
+    z-index: 1;
 }

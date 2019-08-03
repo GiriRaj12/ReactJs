@@ -70,7 +70,7 @@ class Feeds extends React.Component {
     addStatus = (event) => {
         this.setState({ cost: document.getElementById("cost").value });
         this.setState({ service: document.getElementById("service").value }, () => {
-            axios.post("http://localhost:8080/status/save",{
+            axios.post("http://localhost:8081/status/save",{
                 "id":this.props.id,
                 "cost":this.state.cost,
                 "service":this.state.service,

@@ -45,7 +45,7 @@ class FetchFeeds extends React.Component {
     }
 
     addStatus(){
-        axios.get("http://localhost:8080/status/getAll")
+        axios.get("http://localhost:8081/status/getAll")
         .then(response=>{
             console.log(response.data);
             this.setState({status:this.state.status.concat(response.data)});

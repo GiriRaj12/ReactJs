@@ -5,7 +5,7 @@ class OtherInvestments extends React.Component{
     render(){
         return(
             <div className="otherInvestmentsMain">
-
+                <p className="bagroundTextOtherInvestMents">Assert Incomes</p>
             </div>
         );
     }
