@@ -25,3 +25,14 @@
 .plusSign :hover{
     color:rgb(143, 38, 38);
 }
+.addLoans{
+    background-color:rgb(175, 114, 114);
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 80%;
+    height: 40%;
+    border-radius:8px;
+    position: relative;
+    text-align: left;
+    z-index: 1;
+}
