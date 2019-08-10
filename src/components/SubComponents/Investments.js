@@ -8,6 +8,7 @@ class Investments extends React.Component{
         return (
             <div className="investmentsMain">
                 <p className="bagroundTextInvestMents">Investments and Income Modes</p>
+                <p className="plusSign"><i class="fas fa-plus-circle"></i></p>
             </div>
         );
     }
