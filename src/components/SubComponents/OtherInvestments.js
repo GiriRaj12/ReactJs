@@ -1,12 +1,16 @@
 import React from "react"
+import Loans from "./Loans"
 import "../CompCSS/subComponenets.css"
 
 class OtherInvestments extends React.Component{
+    state={
+        formOpen:"none"
+    }
+
     render(){
         return(
             <div className="otherInvestmentsMain">
-                <p className="bagroundTextOtherInvestMents">Asserts </p>
-                <p className="plusSign"><i class="fas fa-plus-circle"></i></p>
+                <Loans></Loans>
             </div>
         );
     }

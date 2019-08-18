@@ -6,7 +6,7 @@ import OtherInvestments from "./SubComponents/OtherInvestments"
 
 class PersonalDetails extends React.Component{
     state={
-
+        
     }
     render(){
         return(
