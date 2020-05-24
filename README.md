@@ -3,3 +3,5 @@ This my hobby project build in React js with spring boot as the backend. This is
 #React JS - Front End for Money Manager app.
 
 #Backend with spring boot is in other repository called #MoneyManagerApp - Spring Boot
+
+#Have not completed the application Work in under process. 
